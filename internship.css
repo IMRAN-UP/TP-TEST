@@ -1,0 +1,446 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@1,700&family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Protest+Revolution&family=Rowdies:wght@300;400;700&family=Slackey&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Timmana&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&family=VT323&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@1,700&family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Protest+Revolution&family=Rowdies:wght@300;400;700&family=Slackey&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Timmana&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&family=Unbounded:wght@200..900&family=VT323&display=swap");
+
+/* set the default style for elements */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+/* set the variables to use */
+
+:root {
+  --main-color: rgb(152, 234, 0);
+  --second-color: rgb(138, 43, 226);
+  --black-color: rgb(0, 0, 0);
+  --grey-color: rgb(65, 65, 65);
+  --white-color: #fff;
+}
+
+/* set the style of the scroll bar */
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--second-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--main-color);
+}
+
+/* style of the body */
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background: var(--black-color);
+  color: aliceblue;
+}
+
+/* style of the header */
+
+.header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 15vh;
+  background: var(--grey-color);
+  padding: 2rem 5% 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 5;
+}
+
+/* style of the IHUB logo */
+
+.header h1 {
+  font-family: "Unbounded", sans-serif;
+  color: var(--main-color);
+  width: fit-content;
+  font-size: 4.5rem;
+  font-weight: 800;
+  cursor: pointer;
+
+}
+
+/* style of the letter I in the IHUB logo */
+
+.header span {
+  font-family: "Unbounded", sans-serif;
+  color: var(--second-color);
+}
+
+/* style of the nav bar in the header */
+
+.header nav {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+/* style of the icons */
+
+.icon i {
+  font-size: 1.5rem;
+  color: var(--main-color);
+  background: transparent;
+  cursor: pointer;
+  aspect-ratio: 1/1;
+  border: 1px solid var(--main-color);
+  border-radius: 50%;
+  padding: .5rem;
+}
+
+/* style of the containers */
+
+.container {
+  width: 100%;
+  min-height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5%;
+  transition: 0.3s ease-in-out;
+}
+
+/* style the no interns text */
+
+.no_internship_container p {
+  background: var(--second-color);
+  color: var(--white-color);
+  font-size: 4rem;
+  font-weight: 800;
+  width: 80%;
+  text-align: center;
+  padding: 2rem 5% 2rem ;
+  z-index: 3;
+}
+
+/* style the no interns table */
+
+.internship_container table {
+  width: 80%;
+  background: var(--grey-color);
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 500;
+  text-align: center;
+  padding: 2rem 5% 2rem ;
+  border: .125rem solid var(--white-color) ;
+  border-collapse: collapse;
+  border-spacing: 0;
+  z-index: 3;
+}
+
+/* style the no interns table first row */
+
+.internship_container table tr:first-child {
+  background: var(--second-color);
+  height: 6rem;
+}
+
+/* style the no interns table row and column */
+
+td,th {
+  padding: .5rem;
+  border: .125rem solid var(--white-color);
+}
+
+
+/* style the no interns table last column divs */
+
+td:last-child div{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* style the container froms  */
+
+.forms_container {
+  position: fixed;
+  top: 15vh;
+  visibility: hidden;
+  opacity: 0;
+  transition:  opacity 0.3s ease-in-out, visibility 0.3s ease-in-out ;
+  z-index: 4;
+}
+
+/* style the forms  */
+
+.forms_container form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  width: 50%;
+  background: var(--grey-color);
+  color: var(--white-color);
+  padding: 2rem;
+  opacity: 0;
+  visibility: hidden;
+  transition:  opacity 0.3s ease-in-out, visibility 0.3s ease-in-out ;
+}
+
+/* style the forms text */
+
+.forms_container h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--main-color);
+  width: fit-content;
+  text-align: center;
+}
+
+.forms_container p{
+  font-size: 1rem;
+  font-weight: 500;
+  width: fit-content;
+  text-align: center;
+}
+
+/* style the form div */
+
+.forms_container div {
+  width: 60%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* style the form buttons */
+
+.forms_container button {
+  background: var(--second-color);
+  color: var(--white-color);
+  font-size: 1rem;
+  font-weight: 600;
+  width: 20%;
+  border: none;
+  padding: .5rem;
+  cursor: pointer;
+}
+
+/* style the form label */
+
+.forms_container label {
+  font-size: 1.25rem;
+  font-weight: 600;
+  width: 80%;
+  text-align: start;
+}
+
+/* style the form inputs */
+
+.forms_container input {
+  width: 80%;
+  height: 1rem;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid var(--main-color);
+  outline: none;
+  color: var(--main-color);
+  padding-bottom: .25rem;
+}
+
+/* style the date input and inputs placeholder  */
+
+.forms_container input::-webkit-datetime-edit ,
+.forms_container input::placeholder {
+  color: var(--main-color);
+  font-size: .75rem;
+  font-weight: 500;
+}
+
+.forms_container input::-webkit-calendar-picker-indicator {
+  background-color: var(--main-color);
+}
+
+/* style the error message */
+
+.error{
+  font-size: 2rem ;
+  color: rgb(184, 0, 0);
+  font-weight: 600;
+}
+
+
+#hidden_nav{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  color: var(--white-color);
+  position: fixed;
+  top: 15vh;
+  height: 85vh;
+  width: 5%;
+  right: -10%;
+  z-index: 5;
+  background: var(--grey-color);
+  transition: right .3s ease-in-out;
+  padding-top: 2rem;
+  gap: 2rem;
+}
+
+/* class for the js transitions */
+
+.forms_container.show{
+  opacity: 1;
+  visibility: visible;
+}
+
+.remove_container.show{
+  opacity: 1;
+  visibility: visible;
+}
+
+.edit_container.show{
+  opacity: 1;
+  visibility: visible;
+}
+
+.add_container.show{
+  opacity: 1;
+  visibility: visible;
+}
+
+.blur{
+  filter: blur(20px);
+}
+
+.edit_container,
+.add_container{
+  width: 80%;
+  height: 60vh;
+  background: var(--grey-color);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+#edit_step1,
+#add_step1{
+  width: 80%;
+  flex-direction: column;
+  position: absolute;
+  transition: right .3s ease-in-out;
+}
+
+#edit_step2,
+#add_step2,
+#edit_step3,
+#add_step3{
+  width: 80%;
+  right: -100%;
+  flex-direction: column;
+  position: absolute;
+  transition: right .3s ease-in-out;
+}
+
+#edit_step3,
+#add_step3{
+  padding-top: 3rem;
+}
+
+.step h1{
+  width: 100%;
+  text-align: center;
+  margin-bottom: 2rem;
+  background: var(--grey-color);
+}
+
+.step table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.step table tr:first-child {
+  background: var(--second-color);
+  height: 4rem;
+  position: sticky;
+}
+
+.step td{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.step td span{
+  width: 50%;
+  text-align: center;
+}
+
+.step input{
+  width: 0.8rem;
+  color: var(--main-color);
+  height: 0.8rem;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: 0.5px solid var(--main-color);
+}
+
+.step input:checked {
+  background-color: var(--main-color);
+}
+
+.step div{
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  align-items: center;
+}
+
+.step form{
+  width: 100%;
+  height: 90vh;
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#edit_step3 input,
+#add_step3 input{
+  width: 100%;
+  height: 5vh;
+  color: var(--main-color);
+  font-size: .75rem;
+  font-weight: 500;
+  border: none;
+  border-bottom: 2px solid var(--main-color);
+}
+
+#edit_step3 input::-webkit-calendar-picker-indicator,
+#edit_step3 input::-webkit-calendar-piker-indicator{
+  background-color: var(--main-color);
+}
+
+.cancel{
+  width: fit-content;
+  position: sticky;
+  top: 0 ;
+  left: 95%;
+  z-index: 4;
+}
